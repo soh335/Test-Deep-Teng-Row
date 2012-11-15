@@ -64,6 +64,11 @@ This document describes Test::Deep::Teng::Row version 0.01.
 
 Test::Deep::Teng::Row support to compare Teng::Row object in using Test::Deep.
 
+It is faild to compare got Teng::Row object to expected that is fetched by diffrent sql to got by is_deeply
+function. Because Teng::Row object has sql attribute that is used to fetch itself. So this
+module provide teng_row function for C<Test::Deep>, and it compare by C<Teng::Row::get_columns> method both
+got and expected.
+
 =head1 INTERFACE
 
 =head2 Functions
