@@ -34,7 +34,7 @@ sub descend {
         return 0;
     }
 
-    Test::Deep::wrap($self->{val}->refetch)->descend($got->refetch);
+    Test::Deep::wrap($self->{val}->get_columns)->descend($got->get_columns);
 }
 
 sub diagnostics {
@@ -47,7 +47,7 @@ __END__
 
 =head1 NAME
 
-Test::Deep::Teng::Row - Compare Teng::Row object by refetch method in using Test::Deep
+Test::Deep::Teng::Row - Compare Teng::Row object by get_columns method in using Test::Deep
 
 =head1 VERSION
 
@@ -72,7 +72,7 @@ Test::Deep::Teng::Row support to compare Teng::Row object in using Test::Deep.
 
 $expected is Teng::Row object.
 
-This function is exported by this module. It check C<$expected> by C<Teng::Row::refetch> method.
+This function is exported by this module. It compares C<$got> to C<$expected> by C<Teng::Row::get_columns> method.
 
 =head1 DEPENDENCIES
 
